@@ -16,7 +16,7 @@ export default function NavActions() {
   }
 
   return (
-    <div className="mx-auto flex items-center gap-x-4">
+    <div className="ml-auto flex items-center gap-x-4">
       <Button className="rounded-full">
         <ShoppingBag size={20} />
         <span className="ml-2 text-sm font-medium text-white">0</span>
