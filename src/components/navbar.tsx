@@ -3,10 +3,10 @@ import MainNav from '@/components/main-nav'
 import NavActions from '@/components/nav-action'
 
 import Link from 'next/link'
-import { categoryAction } from '@/actions/category-get'
+import { getCategoriesAction } from '@/actions/categories-get'
 
 export default async function Navbar() {
-  const categories = await categoryAction()
+  const categories = await getCategoriesAction()
 
   return (
     <div className="border-b">

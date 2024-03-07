@@ -12,7 +12,7 @@ type TQuery = {
 
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`
 
-export async function productsAction(query: TQuery): Promise<TProduct[]> {
+export async function getProductsAction(query: TQuery): Promise<TProduct[]> {
   const url = qs.stringifyUrl({
     url: URL,
     query: {

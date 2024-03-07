@@ -16,7 +16,7 @@ export default function ProductCard({ data }: ProductCardProps) {
   const router = useRouter()
 
   const handleClick = () => {
-    router.push(`/products/${data.id}`)
+    router.push(`/product/${data.id}`)
   }
 
   return (
@@ -27,7 +27,9 @@ export default function ProductCard({ data }: ProductCardProps) {
       <div className="relative aspect-square rounded-xl bg-gray-100">
         <Image
           src={data.images?.[0].url}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill
+          priority={false}
           alt={data.name}
           className="aspect-square rounded-md object-cover"
         />
