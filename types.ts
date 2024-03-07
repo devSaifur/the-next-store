@@ -2,7 +2,7 @@ export type TProduct = {
   id: string
   category: TCategory
   name: string
-  price: number
+  price: string
   isFeatured: boolean
   size: TSize
   color: TColor

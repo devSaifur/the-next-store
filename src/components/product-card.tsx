@@ -7,6 +7,8 @@ import { TProduct } from '../../types'
 
 import IconButton from '@/components/ui/icon-button'
 import Currency from '@/components/currency'
+import { usePreviewModal } from '@/hooks/use-preview-modal'
+import { useCart } from '@/hooks/use-cart'
 
 interface ProductCardProps {
   data: TProduct
@@ -15,8 +17,23 @@ interface ProductCardProps {
 export default function ProductCard({ data }: ProductCardProps) {
   const router = useRouter()
 
+  const { onOpen } = usePreviewModal()
+  const { addItem } = useCart()
+
   const handleClick = () => {
     router.push(`/product/${data.id}`)
+  }
+
+  function onPreview(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.stopPropagation()
+
+    onOpen(data)
+  }
+
+  function onAddToCart(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.stopPropagation()
+
+    addItem(data)
   }
 
   return (
@@ -35,8 +52,12 @@ export default function ProductCard({ data }: ProductCardProps) {
         />
         <div className="absolute bottom-5 w-full px-6 opacity-0 transition group-hover:opacity-100">
           <div className="flex justify-center gap-x-6">
-            <IconButton icon={<Expand size={20} className="text-gray-600" />} />
             <IconButton
+              onClick={onPreview}
+              icon={<Expand size={20} className="text-gray-600" />}
+            />
+            <IconButton
+              onClick={onAddToCart}
               icon={<ShoppingCart size={20} className="text-gray-600" />}
             />
           </div>
