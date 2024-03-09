@@ -42,7 +42,7 @@ export default function CartItem({ data }: CartItemProps) {
               {data.size.name}
             </p>
           </div>
-          <Currency value={data.price} />
+          <Currency value={Number(data.price)} />
         </div>
       </div>
     </li>

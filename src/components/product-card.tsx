@@ -70,7 +70,7 @@ export default function ProductCard({ data }: ProductCardProps) {
       </div>
 
       <div className="flex items-center justify-between">
-        <Currency value={data.price} />
+        <Currency value={Number(data.price)} />
       </div>
     </div>
   )

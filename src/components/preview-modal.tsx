@@ -6,7 +6,7 @@ import Gallery from '@/components/gallery'
 import Info from '@/components/info'
 
 export default function PreviewModal() {
-  const { data: product, isOpen, onOpen, onClose } = usePreviewModal()
+  const { data: product, isOpen, onClose } = usePreviewModal()
 
   if (!product) {
     return null

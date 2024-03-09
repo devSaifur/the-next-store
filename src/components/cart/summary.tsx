@@ -1,11 +1,13 @@
 'use client'
 
+import { useEffect } from 'react'
+import { toast } from 'sonner'
+import axios from 'axios'
+
 import { Button } from '@/components/ui/button'
 import Currency from '@/components/currency'
 import { useSearchParams } from 'next/navigation'
 import { useCart } from '@/hooks/use-cart'
-import { useEffect } from 'react'
-import { toast } from 'sonner'
 
 export default function Summery() {
   const searchParams = useSearchParams()
@@ -27,15 +29,14 @@ export default function Summery() {
   }, [searchParams, removeAll])
 
   const onCheckOut = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
-      body: JSON.stringify({ productIds: items.map((item) => item.id) }),
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+      {
+        productIds: items.map((item) => item.id),
+      }
+    )
 
-    window.location.href = res.url
+    window.location = res.data.url
   }
 
   return (
