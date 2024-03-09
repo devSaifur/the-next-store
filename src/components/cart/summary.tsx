@@ -47,7 +47,12 @@ export default function Summery() {
           <div className="text-base font-medium text-gray-900">Order total</div>
           <Currency value={totalPrice} />
         </div>
-        <Button onClick={onCheckOut} size="lg" className="w-full rounded-full">
+        <Button
+          onClick={onCheckOut}
+          disabled={items.length === 0}
+          size="lg"
+          className="w-full rounded-full"
+        >
           Checkout
         </Button>
       </div>

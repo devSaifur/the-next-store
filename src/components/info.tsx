@@ -9,10 +9,10 @@ import { ShoppingCart } from 'lucide-react'
 import { useCart } from '@/hooks/use-cart'
 
 export default function Info({ data }: { data: TProduct }) {
-  const cart = useCart()
+  const { addItem } = useCart()
 
   const onAddToCart = () => {
-    cart.addItem(data)
+    addItem(data)
   }
 
   return (
