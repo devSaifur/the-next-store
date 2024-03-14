@@ -30,7 +30,7 @@ export default function Gallery({ images = [] }: GalleryProps) {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 alt="Image"
-                className="object-cover object-center"
+                className="object-contain object-center"
               />
             </div>
           </Tab.Panel>

@@ -8,7 +8,7 @@ export default async function HomePage() {
   const products = await getProductsAction({ isFeatured: true })
 
   const billboard = await getBillboardAction(
-    'fce18b63-e780-488e-ada1-e27955bbc0cb'
+    '86ea2d37-efad-4c8d-bf75-0c11357576f8'
   )
 
   return (

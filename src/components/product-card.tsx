@@ -43,12 +43,12 @@ export default function ProductCard({ data }: ProductCardProps) {
     >
       <div className="relative aspect-square rounded-xl bg-gray-100">
         <Image
-          src={data.images?.[0].url}
+          src={data.images?.[0]?.url}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill
           priority={false}
           alt={data.name}
-          className="aspect-square rounded-md object-cover"
+          className="aspect-square rounded-md object-contain"
         />
         <div className="absolute bottom-5 w-full px-6 opacity-0 transition group-hover:opacity-100">
           <div className="flex justify-center gap-x-6">

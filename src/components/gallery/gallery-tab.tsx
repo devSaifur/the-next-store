@@ -20,7 +20,7 @@ export default function GalleryTab({ image }: GalleryTabProps) {
               priority={false}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="product"
-              className="object-cover object-center"
+              className="object-contain object-center"
             />
           </span>
           <span
