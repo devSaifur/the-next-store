@@ -7,6 +7,8 @@ import { getCategoriesAction } from '@/actions/categories-get'
 
 export default async function Navbar() {
   const categories = await getCategoriesAction()
+  
+  if (!categories) return null
 
   return (
     <div className="border-b">

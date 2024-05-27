@@ -4,6 +4,7 @@ import CartItem from '@/components/cart/cart-item'
 import Summery from '@/components/cart/summary'
 import Container from '@/components/ui/container'
 import { useCart } from '@/hooks/use-cart'
+import { Suspense } from 'react'
 
 export default function CartPage() {
   const { items } = useCart()
@@ -24,7 +25,9 @@ export default function CartPage() {
                 ))}
               </ul>
             </div>
-            <Summery />
+            <Suspense>
+              <Summery />
+            </Suspense>
           </div>
         </div>
       </Container>
