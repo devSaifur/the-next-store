@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [The Next Shop](https://the-next-shop-store.vercel.app/)
 
-## Getting Started
+This is an e-commerce store front build with Next.js 14. It is bootstrapped with `create next-app`.
 
-First, run the development server:
+Checkout the Admin dashboard repository: https://github.com/devSaifur/the-next-dashboard
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[![The Next Shop | Store](./public/images/screenshot.png)](the-next-shop-store.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js](https://nextjs.org)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **UI Components:** [HeadlessUI](https://headlessui.com/)
+- **Payments infrastructure:** [Stripe](https://stripe.com)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Running Locally
 
-## Learn More
+1. Clone the repository
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/devSaifur/the-next-store.git
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies using pnpm
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   pnpm install
+   ```
 
-## Deploy on Vercel
+3. Copy the `.env.example` to `.env` and update the variables.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   cp .env.example .env
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Start the development server
+
+   ```bash
+   pnpm run dev
+   ```
