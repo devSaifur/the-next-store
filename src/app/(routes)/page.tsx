@@ -6,10 +6,7 @@ import { getProductsAction } from '@/actions/products-get'
 
 export default async function HomePage() {
   const products = await getProductsAction({ isFeatured: true })
-
-  const billboard = await getBillboardAction(
-    '86ea2d37-efad-4c8d-bf75-0c11357576f8'
-  )
+  const billboard = await getBillboardAction(process.env.BILLBOARD_ID!)
 
   return (
     <Container>
