@@ -35,8 +35,7 @@ export default function Summery() {
         productIds: items.map((item) => item.id),
       }
     )
-
-    window.location = res.data.url
+    window.location.href = res.data.url
   }
 
   return (
