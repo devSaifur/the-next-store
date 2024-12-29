@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { TProduct } from '../../types'
+import { TProduct } from '../types'
 
 interface PreviewModalStore {
   isOpen: boolean

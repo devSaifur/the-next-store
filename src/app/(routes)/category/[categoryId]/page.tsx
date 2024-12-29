@@ -1,7 +1,6 @@
-import { getCategoryAction } from '@/actions/category-get'
-import { getColorsAction } from '@/actions/colors-get'
-import { getProductsAction } from '@/actions/products-get'
-import { getSizesAction } from '@/actions/sizes-get'
+import { getColors } from '@/data/colors'
+import { getProducts } from '@/data/products'
+import { getSizes } from '@/data/sizes'
 import Billboard from '@/components/billboard'
 import Container from '@/components/ui/container'
 import Filter from '@/components/category/filter'
@@ -26,16 +25,15 @@ export default async function CategoryPage({
   const { categoryId } = params
   const { colorId, sizeId } = searchParams
 
-  const products = await getProductsAction({ categoryId, sizeId, colorId })
+  const products = await getProducts({ categoryId, sizeId, colorId })
 
-  const sizes = await getSizesAction()
-  const colors = await getColorsAction()
-  const category = await getCategoryAction(categoryId)
+  const sizes = await getSizes()
+  const colors = await getColors()
 
   return (
     <main className="bg-white">
       <Container>
-        <Billboard data={category.billboard} />
+        <Billboard />
         <div className="px-4 pb-24 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
             <MobileFilters colors={colors} sizes={sizes} />

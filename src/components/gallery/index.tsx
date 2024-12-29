@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { TabGroup, TabPanels, TabPanel, TabList } from '@headlessui/react'
 
 import GalleryTab from '@/components/gallery/gallery-tab'
-import { TImage } from '../../../types'
+import { TImage } from '@/types'
 
 interface GalleryProps {
   images: TImage[]

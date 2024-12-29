@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Expand, ShoppingCart } from 'lucide-react'
-import { TProduct } from '../../types'
+import { TProduct } from '../types'
 
 import IconButton from '@/components/ui/icon-button'
 import Currency from '@/components/currency'

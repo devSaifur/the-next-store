@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import type { TCategory } from '../../types'
+import type { TCategory } from '@/types'
 
 interface MainNavProps {
   data: TCategory[]

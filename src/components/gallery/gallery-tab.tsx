@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Tab } from '@headlessui/react'
 
 import { cn } from '@/lib/utils'
-import { TImage } from '../../../types'
+import { TImage } from '@/types'
 
 interface GalleryTabProps {
   image: TImage

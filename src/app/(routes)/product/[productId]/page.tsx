@@ -1,9 +1,8 @@
-import { getProductAction } from '@/actions/product-get '
-import { getProductsAction } from '@/actions/products-get'
 import ProductList from '@/components/product-list'
 import Container from '@/components/ui/container'
 import Gallery from '@/components/gallery'
 import Info from '@/components/info'
+import { getProduct } from '@/data/products'
 
 export default async function ProductPage({
   params,
@@ -12,11 +11,7 @@ export default async function ProductPage({
 }) {
   const { productId } = params
 
-  const product = await getProductAction(productId)
-
-  const suggestedProduct = await getProductsAction({
-    categoryId: product.category.id,
-  })
+  const product = await getProduct(productId)
 
   return (
     <main className="bg-white">
@@ -29,7 +24,7 @@ export default async function ProductPage({
             </div>
           </div>
           <hr className="my-10" />
-          <ProductList title="Related Items" items={suggestedProduct} />
+          <ProductList title="Related Items" categoryId={product.category.id} />
         </div>
       </Container>
     </main>

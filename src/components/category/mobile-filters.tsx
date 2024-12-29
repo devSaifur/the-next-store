@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Plus, X } from 'lucide-react'
 import { Dialog } from '@headlessui/react'
-import { TColor, TSize } from '../../../types'
+import { TColor, TSize } from '@/types'
 
 import { Button } from '@/components/ui/button'
 import IconButton from '@/components/ui/icon-button'

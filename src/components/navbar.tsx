@@ -3,13 +3,11 @@ import MainNav from '@/components/main-nav'
 import NavActions from '@/components/nav-action'
 
 import Link from 'next/link'
-import { getCategoriesAction } from '@/actions/categories-get'
+import { getCategories } from '@/data/category'
+import { Suspense } from 'react'
+import { Skeleton } from './ui/skeleton'
 
-export default async function Navbar() {
-  const categories = await getCategoriesAction()
-  
-  if (!categories) return null
-
+export default function Navbar() {
   return (
     <div className="border-b">
       <Container>
@@ -17,10 +15,20 @@ export default async function Navbar() {
           <Link href="/" className="ml-4 flex gap-x-2 lg:ml-0">
             <p className="text-xl font-bold">THE NEXT STORE</p>
           </Link>
-          <MainNav data={categories} />
+          <Suspense fallback={<Skeleton className="ml-4 h-8 w-[100px]" />}>
+            <NavDynamic />
+          </Suspense>
           <NavActions />
         </div>
       </Container>
     </div>
   )
+}
+
+async function NavDynamic() {
+  const categories = await getCategories()
+
+  if (!categories) return null
+
+  return <MainNav data={categories} />
 }

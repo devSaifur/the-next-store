@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { TColor, TSize } from '../../../types'
+import { TColor, TSize } from '@/types'
 
 interface FilterProps {
   data: (TSize | TColor)[]

@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 
-import { TProduct } from '../../types'
+import { TProduct } from '@/types'
 
 import Currency from '@/components/currency'
 import { ShoppingCart } from 'lucide-react'
